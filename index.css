@@ -1,0 +1,87 @@
+/*
+  Josh's Custom CSS Reset
+  https://www.joshwcomeau.com/css/custom-css-reset/
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+  margin-block: 0;
+  margin-inline: 0;
+  padding-block: 0;
+  padding-inline: 0;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+#root,
+#__next {
+  isolation: isolate;
+}
+a,
+address {
+  text-decoration: none;
+  font-style: normal;
+  color: inherit;
+}
+
+/* Styles */
+table {
+  border: 2px solid #023caf;
+  border-collapse: collapse;
+  color: #023caf;
+  line-height: 1em;
+}
+tr > * {
+  font-weight: normal;
+  border: 2px solid #023caf;
+  background: #eff9ff;
+}
+tr > td,
+th {
+  padding-block: 0.5em;
+}
+tr > td:nth-child(n + 2) {
+  padding-inline: 1em;
+  text-align: center;
+}
+tr > *:nth-child(1) {
+  padding-inline-start: 0.5rem;
+}
+.bottom-top {
+  padding-inline: 0.5em;
+  writing-mode: vertical-rl;
+  transform: scale(-1);
+  height: min-content;
+}

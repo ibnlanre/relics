@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="index.css" rel="stylesheet" type="text/css" />
+    <script type="module" src="index.js"></script>
+    <title>RELICS Report Sheet</title>
+  </head>
+  <body>
+    <main
+      id="app"
+      style="display: grid; gap: 20px; width: 90%; margin-inline: auto; padding-block: 30px;"
+    >
+    <img style="position: absolute; top:0; left: 0" src="assets/triangle.svg" />
+      <header
+        style="display: flex; align-items: center;"
+      >
+        <address
+          style="
+            display: grid;
+            justify-items: center;
+            text-align: center;
+            flex: 1;
+            padding-inline: 2rem;
+          "
+        >
+          <img height="100" src="assets/relics-logo.png" />
+          <h1 style="color: #023caf; font-size: 3rem; font-weight: bolder">
+            RELICS SCHOOLS
+          </h1>
+          <p>
+            Off Olukoko Street, (First Turning after AKOL Pharmacy), Behind
+            LAUTECH Teaching Hospital, Ogbomoso, Oyo State.
+          </p>
+          <div style="display: flex; gap: 20px">
+            <a href="mailto:relickiddies@gmail.com">
+              <p>
+                <span style="font-weight: bold">Email:</span>
+                relickiddies@gmail.com
+              </p>
+            </a>
+            <a href="tel:07088410260">
+              <p><span style="font-weight: bold">Tel:</span> 07088410260</p>
+            </a>
+          </div>
+        </address>
+
+        <img
+          height="200"
+          style="border-radius: 25%; border: 4px solid #023caf"
+          src="assets/male-placeholder-image.jpeg"
+        />
+      </header>
+
+      <!-- BIO-DATA INFORMATION -->
+      <article
+        style="
+          background: #eff9ff;
+          border: 2px solid #023caf;
+          color: #023caf;
+          padding-block: 1.5rem;
+          padding-inline: 0.5rem;
+          gap: 1rem;
+          display: grid;
+        "
+      >
+        <div style="display: flex; align-items: flex-end">
+          <p>Student Name:</p>
+          <hr
+            style="border: none; height: 1px; background: currentColor; flex: 1"
+          />
+        </div>
+        <section style="display: grid; gap: 30px; grid-auto-flow: column">
+          <div style="display: flex; align-items: flex-end">
+            <p>Gender:</p>
+            <hr
+              style="
+                border: none;
+                height: 1px;
+                background: currentColor;
+                flex: 1;
+              "
+            />
+          </div>
+          <div style="display: flex; align-items: flex-end">
+            <p>Class:</p>
+            <hr
+              style="
+                border: none;
+                height: 1px;
+                background: currentColor;
+                flex: 1;
+              "
+            />
+          </div>
+          <div style="display: flex; align-items: flex-end">
+            <p>No. in class:</p>
+            <hr
+              style="
+                border: none;
+                height: 1px;
+                background: currentColor;
+                flex: 1;
+              "
+            />
+          </div>
+          <div style="display: flex; align-items: flex-end">
+            <p>Term:</p>
+            <hr
+              style="
+                border: none;
+                height: 1px;
+                background: currentColor;
+                flex: 1;
+              "
+            />
+          </div>
+        </section>
+      </article>
+
+      <!-- REPORT INFORMATION -->
+      <table style="width: 100%">
+        <tbody>
+          <tr style="text-align: left">
+            <th>
+              <div style="display: grid; gap: 0.5rem; justify-items: start">
+                <span> Passed Subjects: 12 </span>
+                <span> Failed Subjects: 0 </span>
+              </div>
+            </th>
+            <th
+              style="
+                font-weight: bold;
+                writing-mode: vertical-rl;
+                transform: scale(-1);
+                height: min-content;
+                padding-inline: 0.5em;
+              "
+            >
+              Mark Obtainable
+            </th>
+            <th
+              :rowspan="15"
+              style="
+                font-weight: bold;
+                text-align: center;
+                text-transform: uppercase;
+                writing-mode: vertical-rl;
+                transform: scale(-1);
+                height: min-content;
+              "
+            >
+              Academic
+            </th>
+            <th v-for="subject in subjects" class="bottom-top">
+              {{ subject }}
+            </th>
+          </tr>
+          <tr v-for="(value, event) in events">
+            <th scope="row" style="text-align: left">{{ event }}</th>
+            <td>{{ value }}</td>
+            <td v-for="index in 12"></td>
+          </tr>
+          <tr>
+            <th scope="row" style="text-align: left">Remark</th>
+            <td v-for="index in 13"></td>
+          </tr>
+          <tr>
+            <th scope="row" style="text-align: left">Position</th>
+            <td v-for="index in 13"></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- MISCELLENOUS -->
+      <section style="display: grid; grid-auto-flow: column; gap: 0.5rem">
+        <table>
+          <tbody>
+            <tr>
+              <th style="font-weight: bold; text-align: left">
+                Affective Domain
+              </th>
+              <th v-for="idx in 5">{{ 6 - idx }}</th>
+            </tr>
+            <tr v-for="domain in domains">
+              <td>{{ domain }}</td>
+              <td v-for="index in 5"></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <table>
+          <tbody>
+            <tr>
+              <th style="font-weight: bold; text-align: left">
+                Psychomotive Skills
+              </th>
+              <th v-for="idx in 5">{{ 6 - idx }}</th>
+            </tr>
+            <tr v-for="skill in skills">
+              <td>{{ skill }}</td>
+              <td v-for="index in 5"></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <table>
+          <tbody>
+            <tr>
+              <th></th>
+              <th class="bottom-top" style="height: 5rem">Student Score</th>
+              <th class="bottom-top" style="height: 5rem">Highest in Class</th>
+              <th class="bottom-top" style="height: 5rem">Lowest in Class</th>
+            </tr>
+            <tr>
+              <th class="bottom-top">Cumulative Total Score</th>
+              <th></th>
+              <th></th>
+              <th></th>
+            </tr>
+            <tr>
+              <th class="bottom-top">Cumulative Average Score</th>
+              <th></th>
+              <th></th>
+              <th></th>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <article
+        style="
+          background: #eff9ff;
+          border: 2px solid #023caf;
+          color: #023caf;
+          padding-block: 1.5rem;
+          padding-inline: 0.5rem;
+          gap: 1rem;
+          display: grid;
+        "
+      >
+        <div style="display: flex; align-items: flex-end">
+          <p style="font-weight: bold">Teacher's Remark:</p>
+          <hr
+            style="border: none; height: 1px; background: currentColor; flex: 1"
+          />
+        </div>
+        <div style="display: flex; align-items: flex-end">
+          <p style="font-weight: bold">Principal's Remark:</p>
+          <hr
+            style="border: none; height: 1px; background: currentColor; flex: 1"
+          />
+        </div>
+        <div style="display: flex; align-items: flex-end">
+          <p style="font-weight: bold">Next Term Begins:</p>
+          <hr
+            style="border: none; height: 1px; background: currentColor; flex: 1"
+          />
+        </div>
+      </article>
+    </main>
+  </body>
+</html>
